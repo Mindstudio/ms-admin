@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="">
     <p>
-      {{ item._id }}
+      {{ book._id }}
     </p>
     <p>
-      {{ item.title }}
+      {{ book.title }}
     </p>
   </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
   name: 'read-item',
   computed: {
-    item () {
+    book () {
       return this.$store.getters.getBookById(this.$route.params.id)
     }
   }

@@ -26,28 +26,28 @@
             </div>
 
             <div
-            class="flex flex-row text-xs text-grey-dark" v-for="item in items"
-            :key="item._id">
-              <div class="w-1/5 border-r border-l border-b p-2 flex items-center">
-                <router-link :to="{ name: 'read-item', params: { id: item._id } }">
-                  {{ item._id }}
+            class="flex flex-row text-xs text-grey-dark" v-for="book in books"
+            :key="book._id">
+              <div class="w-1/5 border-r border-l border-b p-2 flex books-center">
+                <router-link :to="{ name: 'read-item', params: { id: book._id } }">
+                  {{ book._id }}
                 </router-link>
               </div>
-              <div class="w-1/5 border-r border-b p-2 flex items-center">
-                {{ item.subject }}
+              <div class="w-1/5 border-r border-b p-2 flex books-center">
+                book.subject
               </div>
-              <div class="w-7/20 border-r border-b p-2 leading-normal flex items-center">
-                {{ item.title }}
+              <div class="w-7/20 border-r border-b p-2 leading-normal flex books-center">
+                {{ book.title }}
               </div>
-              <div class="w-1/10 border-r border-b p-2 flex items-center">
-                item.status
+              <div class="w-1/10 border-r border-b p-2 flex books-center">
+                book.status
               </div>
-              <div class="w-3/20 border-r border-b flex flex-row justify-around items-center">
+              <div class="w-3/20 border-r border-b flex flex-row justify-around books-center">
                 <button class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-green font-medium rounded-sm p-1 no-underline">
                   Publish
                 </button>
                 <router-link
-                  :to="{ name: 'update', params: { id: item._id } }"
+                  :to="{ name: 'update', params: { id: book._id } }"
                   class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-orange font-medium rounded-sm p-1 no-underline"
                   tag="button"
                 >
@@ -71,8 +71,8 @@
 export default {
   name: 'read-model',
   computed: {
-    items () {
-      return this.$store.state.items
+    books () {
+      return this.$store.state.books
     }
   }
 }
