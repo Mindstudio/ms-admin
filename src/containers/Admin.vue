@@ -9,7 +9,7 @@ export default {
   name: 'admin-container',
   // TODO: ...mapActions
   mounted: function () {
-    this.$store.dispatch('load_books')
+    this.$store.dispatch('load_items')
   }
 }
 </script>

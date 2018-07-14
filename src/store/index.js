@@ -1,18 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+
+import adminAPI from '@/modules/admin/_api/adminAPI'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    books: {}
+    items: {}
   },
 
   getters: {
-    getBookById: (state) => (id) => {
-      return state.books.find(book => book._id === id)
-    }
+    // getBookById: (state) => (id) => {
+    //   return state.books.find(book => book._id === id)
+    // }
   },
 
   actions: {
@@ -23,9 +24,9 @@ export default new Vuex.Store({
     //     console.log(err)
     //   })
     // },
-    load_books: function ({ commit }) {
-      axios.get('/books').then((res) => {
-        commit('set_books', { payload: res.data.books })
+    load_items: function ({ commit }) {
+      adminAPI.findItems().then((res) => {
+        commit('set_items', { payload: res.data })
       }, (err) => {
         console.log(err)
       })
@@ -36,8 +37,8 @@ export default new Vuex.Store({
     // set_items: (state, { payload }) => {
     //   state.data.items = payload
     // },
-    set_books: (state, { payload }) => {
-      state.books = payload
+    set_items: (state, { payload }) => {
+      state.items = payload
     }
   },
 

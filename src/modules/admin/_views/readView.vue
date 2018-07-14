@@ -72,7 +72,7 @@ export default {
   name: 'read-model',
   computed: {
     items () {
-      return this.$store.state.books
+      return this.$store.state.items
     }
   }
 }
