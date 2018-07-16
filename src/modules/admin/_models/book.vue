@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import adminAPI from '../_api/adminAPI'
+// import adminAPI from '../_api/adminAPI'
 
 export default {
   name: 'create-book',
@@ -66,15 +66,20 @@ export default {
   },
   methods: {
     createBook () {
-      adminAPI.createBook({
-        title: this.title,
-        author: this.author,
-        summary: this.summary,
-        isbn: this.isbn,
-        genre: this.genre
-      })
+      this.$store.dispatch('create_book')
     }
   }
+  // methods: {
+  //   async createBook () {
+  //     await adminAPI.createBook({
+  //       title: this.title,
+  //       author: this.author,
+  //       summary: this.summary,
+  //       isbn: this.isbn,
+  //       genre: this.genre
+  //     })
+  //   }
+  // }
 }
 </script>
 
