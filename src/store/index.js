@@ -31,6 +31,13 @@ export default new Vuex.Store({
         console.log(err)
       })
     }
+    // create_book: function ({ commit }) {
+    //   adminAPI.createBook().then(() => {
+    //     commit('set_book_info', { payload })
+    //   }, (err) => {
+    //     console.log(err)
+    //   })
+    // }
   },
 
   mutations: {
@@ -40,6 +47,16 @@ export default new Vuex.Store({
     set_books: (state, { payload }) => {
       state.books = payload
     }
+    // set_book_info: (state, { payload }) => {
+    //   payload = {
+    //     title: this.title,
+    //     author: this.author,
+    //     summary: this.summary,
+    //     isbn: this.isbn,
+    //     genre: this.genre
+    //   }
+    //   console.log('set_book_info')
+    // }
   },
 
   modules: {}

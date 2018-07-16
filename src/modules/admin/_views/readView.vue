@@ -70,6 +70,10 @@
 <script>
 export default {
   name: 'read-model',
+  // TODO: ...mapActions
+  mounted: function () {
+    this.$store.dispatch('load_books')
+  },
   computed: {
     books () {
       return this.$store.state.books
