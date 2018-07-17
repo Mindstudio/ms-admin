@@ -35,11 +35,19 @@
       v-model="genre"
       class="mb-2 border p-2 text-sm">
 
+      <input
+        type="text"
+        name="status"
+        placeholder="status"
+        v-model="status"
+        class="mb-2 border p-2 text-sm">
+
       <p>{{ title }}</p>
       <p>{{ author }}</p>
       <p>{{ summary }}</p>
       <p>{{ isbn }}</p>
       <p>{{ genre }}</p>
+      <p>{{ status }}</p>
 
       <button
         type="button"
@@ -51,7 +59,7 @@
 </template>
 
 <script>
-// import adminAPI from '../_api/adminAPI'
+import adminAPI from '../_api/adminAPI'
 
 export default {
   name: 'create-book',
@@ -61,25 +69,22 @@ export default {
       author: '',
       summary: '',
       isbn: '',
-      genre: ''
+      genre: '',
+      status: ''
     }
   },
   methods: {
-    createBook () {
-      this.$store.dispatch('create_book')
+    async createBook () {
+      await adminAPI.createBook({
+        title: this.title,
+        author: this.author,
+        summary: this.summary,
+        isbn: this.isbn,
+        genre: this.genre,
+        status: this.status
+      })
     }
   }
-  // methods: {
-  //   async createBook () {
-  //     await adminAPI.createBook({
-  //       title: this.title,
-  //       author: this.author,
-  //       summary: this.summary,
-  //       isbn: this.isbn,
-  //       genre: this.genre
-  //     })
-  //   }
-  // }
 }
 </script>
 

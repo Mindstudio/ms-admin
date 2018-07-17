@@ -40,10 +40,12 @@
                 {{ book.title }}
               </div>
               <div class="w-1/10 border-r border-b p-2 flex books-center">
-                book.status
+                {{ book.status }}
               </div>
               <div class="w-3/20 border-r border-b flex flex-row justify-around books-center">
-                <button class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-green font-medium rounded-sm p-1 no-underline">
+                <button
+                @click="publishBook(book)"
+                class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-green font-medium rounded-sm p-1 no-underline">
                   Publish
                 </button>
                 <router-link
@@ -53,7 +55,9 @@
                 >
                   Update
                 </router-link>
-                <button class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-red font-medium rounded-sm p-1 no-underline">
+                <button
+                  @click="deleteItem(book._id)"
+                  class="text-grey-darker hover:text-grey-lightest bg-grey-lighter hover:bg-red font-medium rounded-sm p-1 no-underline">
                   Delete
                 </button>
               </div>
@@ -68,15 +72,33 @@
 </template>
 
 <script>
+import adminAPI from '../_api/adminAPI'
+
 export default {
   name: 'read-model',
   // TODO: ...mapActions
   mounted: function () {
-    this.$store.dispatch('load_books')
+    this.getBooks()
   },
   computed: {
     books () {
       return this.$store.state.books
+    }
+  },
+  methods: {
+    getBooks () {
+      return this.$store.dispatch('load_books')
+    },
+    async deleteItem (id) {
+      await adminAPI.deleteBook(id)
+      this.getBooks()
+    },
+    async publishBook (book) {
+      await adminAPI.publishBook({
+        id: book._id,
+        status: book.status
+      })
+      this.getBooks()
     }
   }
 }

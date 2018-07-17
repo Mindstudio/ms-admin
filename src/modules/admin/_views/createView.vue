@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import book from '../_models/book.vue'
+import book from '../_models/create_book.vue'
 
 export default {
   data () {
