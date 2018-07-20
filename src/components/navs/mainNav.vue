@@ -5,7 +5,7 @@
         <focus-link></focus-link>
       </div>
       <div class="w-1/3">
-        <dir-link></dir-link>
+        <dir-link class="mr-8"></dir-link>
         <lib-link></lib-link>
       </div>
       <div class="w-1/3 py-1 flex flex-row justify-end">
