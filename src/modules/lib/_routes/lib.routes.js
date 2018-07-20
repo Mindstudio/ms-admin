@@ -26,12 +26,12 @@ export default [
               },
               {
                 name: 'view-lib-item',
-                path: '/view/:id',
+                path: 'view/:id',
                 component: viewLibItem
               },
               {
                 name: 'update-lib-item',
-                path: '/update/:id',
+                path: 'update/:id',
                 component: updateLibItem
               }
             ]
