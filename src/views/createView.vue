@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import book from '@/modules/lib/_models/create_book.vue'
-import author from '@/modules/lib/_models/create_author.vue'
+import book from '@/modules/lib/_models/create/book.vue'
+import author from '@/modules/dir/_models/create/author.vue'
 
 export default {
   data () {
