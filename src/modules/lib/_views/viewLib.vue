@@ -74,7 +74,7 @@
 import booksAPI from '../_api/booksAPI'
 
 export default {
-  name: 'read-model',
+  name: 'view-lib',
   // TODO: ...mapActions
   mounted: function () {
     this.getBooks()
