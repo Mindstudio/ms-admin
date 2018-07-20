@@ -1,8 +1,8 @@
 import adminContainer from '@/containers/Admin'
-import adminMain from '../views/adminMain'
+import adminMain from '@/views/adminMain'
 
-import createView from '../views/createView'
-import dash from '../views/dash'
+import createView from '@/views/createView'
+import dash from '@/views/dash'
 
 export default [
   {
