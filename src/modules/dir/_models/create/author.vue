@@ -60,13 +60,12 @@ export default {
   methods: {
     async createAuthor () {
       await authorsAPI.createAuthor({
-        title: this.title,
-        author: this.author,
-        summary: this.summary,
-        isbn: this.isbn,
-        genre: this.genre,
-        status: this.status
+        first_name: this.first_name,
+        last_name: this.last_name,
+        date_of_birth: this.date_of_birth,
+        date_of_death: this.date_of_death
       })
+      this.$router.push({ name: 'view-dir' })
     }
   }
 }

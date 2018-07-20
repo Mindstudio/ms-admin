@@ -17,7 +17,7 @@
                 Name
               </div>
               <div class="w-1/5 text-xs border-r border-b border-t bg-grey-lightest p-2">
-                Genre
+                Date of Birth
               </div>
               <div class="w-7/20 text-xs border-r border-b border-t bg-grey-lightest p-2">
                 ..
