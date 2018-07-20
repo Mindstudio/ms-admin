@@ -7,8 +7,15 @@
       v-model="title"
       class="mb-2 border p-2 text-sm">
 
-      <label for="createView">Create a </label>
-      <!-- <select
+      <input
+        type="text"
+        name="author"
+        placeholder="author"
+        v-model="author"
+        class="mb-2 border p-2 text-sm">
+
+      <!-- <label for="createView">Create a </label>
+      <select
         id="model"
         class="mb-2 border p-2 text-sm"
         name="author"
@@ -67,7 +74,7 @@
 </template>
 
 <script>
-import booksAPI from '../_api/booksAPI'
+import booksAPI from '../../_api/booksAPI'
 
 export default {
   name: 'create-book',
