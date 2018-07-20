@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import adminAPI from '@/modules/admin/_api/adminAPI'
+import booksAPI from '@/modules/lib/_api/booksAPI'
 
 Vue.use(Vuex)
 
@@ -25,7 +25,7 @@ export default new Vuex.Store({
     //   })
     // },
     load_books: function ({ commit }) {
-      adminAPI.findBooks().then((res) => {
+      booksAPI.findBooks().then((res) => {
         commit('set_books', { payload: res.data })
       }, (err) => {
         console.log(err)
