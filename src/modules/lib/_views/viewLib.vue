@@ -4,6 +4,11 @@
     <div class="flex flex-row px-3 py-3">
 
       <div class="w-full p-3 flex flex-col justify-between">
+
+        <div class="border h-48 p-3 mb-6 text-xs">
+          TODO: control panel
+        </div>
+
         <div class="h-216">
           <div class="flex flex-col">
 
