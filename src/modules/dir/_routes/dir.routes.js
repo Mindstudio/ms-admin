@@ -19,7 +19,7 @@ export default [
             children: [
               {
                 name: 'view-dir',
-                path: 'view/dir',
+                path: 'dir',
                 component: viewDir
               }
             ]
