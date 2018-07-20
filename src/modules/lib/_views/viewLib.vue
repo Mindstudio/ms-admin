@@ -7,6 +7,7 @@
 
         <div class="border h-48 p-3 mb-6 text-xs">
           TODO: control panel
+          {{ this.user }}
         </div>
 
         <div class="h-216">
@@ -73,6 +74,8 @@
 <script>
 import booksAPI from '../_api/booksAPI'
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'view-lib',
   // TODO: ...mapActions
@@ -81,13 +84,19 @@ export default {
   },
   computed: {
     books () {
-      return this.$store.state.books
+      return this.$store.state.libModule.books
+    },
+    user () {
+      return this.$store.state.libModule.user
     }
   },
   methods: {
-    getBooks () {
-      return this.$store.dispatch('load_books')
-    },
+    // getBooks () {
+    //   return this.$store.dispatch('loadBooks')
+    // },
+    ...mapActions('libModule', {
+      getBooks: 'loadBooks'
+    }),
     async deleteItem (id) {
       await booksAPI.deleteBook(id)
       this.getBooks()

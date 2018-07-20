@@ -98,6 +98,7 @@ export default {
         genre: this.genre,
         status: this.status
       })
+      this.$router.push({ name: 'view-lib' })
     }
   }
 }
