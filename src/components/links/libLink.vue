@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'lib-button'
+  name: 'lib-link'
 }
 </script>
 

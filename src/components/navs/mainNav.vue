@@ -5,7 +5,8 @@
         <focus-link></focus-link>
       </div>
       <div class="w-1/3">
-        <lib-button></lib-button>
+        <dir-link></dir-link>
+        <lib-link></lib-link>
       </div>
       <div class="w-1/3 py-1 flex flex-row justify-end">
         <admin-menu></admin-menu>
@@ -15,16 +16,19 @@
 </template>
 
 <script>
-import focusLink from '@/components/navs/focusLink'
-import adminMenu from './adminMenu'
-import libButton from '../buttons/libButton'
+import dirLink from '@/components/links/dirLink'
+import focusLink from '@/components/links/focusLink'
+import libLink from '@/components/links/libLink'
+
+import adminMenu from '@/components/menus/admin/adminMenu'
 
 export default {
   name: 'admin-nav',
   components: {
+    dirLink,
     focusLink,
-    adminMenu,
-    libButton
+    libLink,
+    adminMenu
   }
 }
 </script>

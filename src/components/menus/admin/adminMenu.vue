@@ -2,7 +2,7 @@
   <nav class="text-xs">
     <router-link
       :to="{ name: 'create' }"
-      class="text-grey-darker bg-grey-lighter border font-medium rounded-sm p-1 no-underline mr-4"
+      class="text-grey-darker bg-grey-lighter border font-medium rounded-sm p-1 no-underline"
       tag="button"
       >Create
     </router-link>
