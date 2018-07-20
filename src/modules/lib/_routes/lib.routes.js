@@ -21,7 +21,7 @@ export default [
             children: [
               {
                 name: 'view-lib',
-                path: 'view/lib',
+                path: 'lib',
                 component: viewLib
               },
               {
