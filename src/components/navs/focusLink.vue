@@ -1,6 +1,6 @@
 <template lang="html">
   <router-link
-    :to="{ name: 'one' }"
+    :to="{ name: 'dash' }"
     class="text-base text-grey no-underline"
     >Mindstud.io
   </router-link>
