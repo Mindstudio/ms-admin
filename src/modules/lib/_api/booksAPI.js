@@ -10,7 +10,7 @@ export default {
     return Api().get(`/api/books`)
   },
   findBookById (id) {
-    console.log('findBookById')
+    console.log('findBookById', id)
     return Api().get(`/api/books/book/${id}`)
   },
   updateBook (params) {
